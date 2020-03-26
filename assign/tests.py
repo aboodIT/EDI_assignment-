@@ -1,7 +1,9 @@
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
+
 from .models import team_model
+
 
 class AccountTests(APITestCase):
     def test_create_account(self):

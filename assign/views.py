@@ -1,16 +1,14 @@
-from django.shortcuts import render
-
-
 # Create your views here.
-from django.http import HttpResponse
-from rest_framework import viewsets,generics
-from .models import employee_model, team_model, work_model, leaders_model
-from .serializers import employee_serializer, TeamDetailPageSerializer, TeamListPageSerializer
-
 from django.http import HttpResponse, JsonResponse
-from rest_framework import status
+from django.shortcuts import render
+from rest_framework import generics, status, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
+from .models import employee_model, leaders_model, team_model, work_model
+from .serializers import (TeamDetailPageSerializer, TeamListPageSerializer,
+                          employee_serializer)
+
 
 #Team Details 
 @api_view(['GET', 'POST'])

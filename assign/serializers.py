@@ -1,6 +1,7 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group, User
 from rest_framework import serializers
-from .models import employee_model, team_model, work_model, leaders_model
+
+from .models import employee_model, leaders_model, team_model, work_model
 
 # class team_serializer(serializers.ModelSerializer):
 #     #employee = employee_serializer(source='name')
@@ -37,8 +38,3 @@ class TeamDetailPageSerializer(TeamListPageSerializer):
 #     class Meta:
 #         model = work_model
 #         fields = ('id','url','name')
-
-
-
-
-
