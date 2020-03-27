@@ -5,7 +5,7 @@ from rest_framework import generics, status, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import employee_model, leaders_model, team_model, work_model
+from .models import employee_model, team_model
 from .serializers import (TeamDetailPageSerializer, TeamListPageSerializer,
                           employee_serializer)
 
@@ -24,8 +24,6 @@ def team_view(request):
             serializer = TeamListPageSerializer(team)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 @api_view(['GET', 'PATCH', 'DELETE'])
 def team_detail_view(request, pk):

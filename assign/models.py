@@ -13,14 +13,14 @@ class team_model(models.Model):
     #         self._employee = self.employee_set.all()
     #     return self._employee
 
-class work_model(models.Model): 
-    name = models.CharField(max_length=50)
+# class work_model(models.Model): 
+#     name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 class employee_model(models.Model):
-    team = models.ForeignKey(team_model,to_field='name',on_delete=models.CASCADE)
+    team = models.ForeignKey(team_model,to_field='name',on_delete=models.CASCADE,default=None)
     name = models.CharField(max_length=50,unique=True)
     leader = models.BooleanField()
     pay = models.PositiveIntegerField()
@@ -29,8 +29,8 @@ class employee_model(models.Model):
     def __str__(self):
         return self.name
 
-class leaders_model(models.Model):
-    name = models.ForeignKey(employee_model,to_field='name',on_delete=models.CASCADE)
+# class leaders_model(models.Model):
+#     name = models.ForeignKey(employee_model,to_field='name',on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
